@@ -70,6 +70,5 @@ CREATE TABLE IF NOT EXISTS MembersEvent (
     Number INT NOT NULL DEFAULT 0,
     FOREIGN KEY (MemberID) REFERENCES Members(id),
     FOREIGN KEY (EventsID) REFERENCES Events(id),
-    CONSTRAINT SameValuesMember UNIQUE(MemberID),
-    CONSTRAINT SameValuesEvents UNIQUE(EventsID)
+    CONSTRAINT SameValuesEvent UNIQUE(MemberID, EventsID),
 ) ENGINE = InnoDB   CHARACTER SET = UTF8;
